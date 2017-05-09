@@ -22,4 +22,4 @@
     - 🏹 Vue-Skill（*vue 的一些小技巧*）
         - [全局 API](https://github.com/Musiky/Article/blob/master/Vue/Vue-skill/1_global-api.md)
     - Vuex
-        - [modules]((https://github.com/Musiky/Article/blob/master/Vue/Vuex/modules.md))
+        - [modules](https://github.com/Musiky/Article/blob/master/Vue/Vuex/modules.md)

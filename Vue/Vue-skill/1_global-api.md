@@ -7,7 +7,7 @@
 开发过程中，经常会对**对象**进行操作。如设置对象的属性；\
 我们通常使用以下方式设置**对象**的属性：
 ``` javascript
-export default {
+export default {
     data: {
         return {
             info: {
@@ -41,7 +41,7 @@ methods: {
 Vue.set(Object, key, value)
 ```
 ``` javascript
-export default {
+export default {
     data: {
         return {
             info: {

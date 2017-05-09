@@ -16,3 +16,6 @@
         - [引入插件](https://github.com/Musiky/Article/blob/master/Vue/Vue-import/2_import-plugin.md)
     - 🔮 Vue-Transition
         - [使用自定义动画](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/1_customize.md)
+        - [使用 animate.css](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/2_animate.css.md)
+        - [使用 velocity.js](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/3_velocity.md)
+        - [过渡模式 - 多个元素之间替换](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/4_ele-replace.md)

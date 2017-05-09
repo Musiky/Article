@@ -1,3 +1,5 @@
+## 过渡模式 - 多个元素之间替换
+
 ``` html
 <transition 
     enter-active-class="animated slideInLeft"

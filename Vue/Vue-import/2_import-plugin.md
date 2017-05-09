@@ -1,4 +1,5 @@
-# 索引
+# 插件安装
+## 索引
 - [axios](#axios)
 - [vue-video-player](#vue-video-player)
 - [vuex](#vuex)

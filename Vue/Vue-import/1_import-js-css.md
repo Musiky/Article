@@ -1,7 +1,7 @@
+# 在项目中引入 css／js 文件
+## javascript file 引入
 
-# javascript file 引入
-
-## 局部引入：
+### 局部引入：
 
 > ./asset/js/api.js
 ``` javascript
@@ -21,7 +21,7 @@ export default {
 }
 ```
 
-## 全局引入：
+### 全局引入：
 1.将对象方法写在 main.js 中，对象作为 Vue 实例的原型
 > ./main.js
 ``` javascript
@@ -62,7 +62,7 @@ export default {
 }
 ```
 
-# css file 引入
+## css file 引入
 🦊 全局引入在 main.js 中，局部引入在 *.vue 文件中
 
 > ./asset/css/common.css

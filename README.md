@@ -13,3 +13,6 @@
     - 🔗 Vue-import(vue 引入外部文件/插件等的方法) 
         - [export 和 export default 的使用](https://github.com/Musiky/Article/blob/master/Vue/Vue-import/0_export.md)
         - [在项目中引入 css／js 文件](https://github.com/Musiky/Article/blob/master/Vue/Vue-import/1_import-js-css.md)
+        - [引入插件](https://github.com/Musiky/Article/blob/master/Vue/Vue-import/2_import-plugin.md)
+    - 🔮 Vue-Transition
+        - [使用自定义动画](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/1_customize.md)

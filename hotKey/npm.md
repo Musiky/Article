@@ -1,14 +1,14 @@
 # npm 参考手册
 
 ## 索引
-- [权限](#purview)
+- [权限](#权限)
     - t/team 组织成员管理
     - access 包访问控制
     - adduser/login 用户登录
     - logout 注销
     - owner 所有者管理
     - whoami 查看用户信息
-- [包仓储](#store)
+- [包仓储](#包仓储)
     - s/se/search 仓储查找包
     - publish 发布
     - unpublish 取消发布
@@ -16,7 +16,7 @@
     - stars 我喜欢的包
     - star 喜欢
     - unstar 取消喜欢
-- [包本地](#local)
+- [包本地](#包本地)
     - init 初始化package.json
     - i/install 安装
     - un/uninstall 删除
@@ -32,18 +32,18 @@
     - prune 清理外来包
     - shrinkwrap 锁定依赖包版本
     - cache 缓存管理
-- [脚本](#script)
+- [脚本](#脚本)
     - run/run-script 运行脚本
     - start 运行start脚本
     - stop 运行stop脚本
     - tst/test 运行test脚本
     - rb/rebuild 重新编译本地包
     - restart 顺序执行重启相关的一系列脚本
-- [配置](#config)
+- [配置](#配置)
     - c/config 配置管理
     - get 列出配置
     - set 设置配置
-- [查看](#check)
+- [查看](#查看)
     - root 包根目录
     - prefix 打印prefix配置
     - v/view 查看仓储信息
@@ -53,14 +53,15 @@
     - repo 浏览器查看仓储
     - help 查看帮助
     - help-search 帮助中搜索关键字
-- [其他](#other)
+- [其他](#其他)
     - completion shell插补
     - doctor 环境检测
     - edit 进入包目录并启动编辑器
     - explore 进入包目录并运行命令
     - ping 检查仓储是否可用
 
-## <span id="purview">权限</span>
+## 权限 
+##### [回到目录](#索引)
 npm允许通过scope组织私有包，通过team细化权限控制.
 
 npm官方仓储有两种类型的包，普通包和scope包
@@ -123,7 +124,8 @@ npm whoami [--registry <registry>]
 ```
 列出用户在npmjs.org上的用户名
 
-## <span id="store">包仓储</span>
+## 包仓储
+##### [回到目录](#索引)
 ### s/se/search
 ```
 npm search [-l|--long] [--json] [--parseable] [--no-description] [search terms ...]  
@@ -163,7 +165,8 @@ npm unstar [<pkg>...]
 ```
 标记喜欢/取消喜欢标记
 
-## <span id="local">包本地</span>
+## 包本地
+##### [回到目录](#索引)
 ### init
 ```
 npm init [-f|--force|-y|--yes]  
@@ -378,7 +381,8 @@ npm cache clean [<path>] # 清除缓存
 ```
 缓存路径可以通过npm config get cache获取
 
-## <span id="script">脚本</span>
+## 脚本
+##### [回到目录](#索引)
 > package.json的scripts区可以用来定义自定义脚本
 
 ### run/run-script
@@ -421,7 +425,8 @@ npm restart [-- <args>]
 ```
 循序执行1. prerestart 2. prestop 3. stop 4. poststop 5. restart 6. prestart 7. start 8. poststart 9. postrestart
 
-## <span id="config">配置</span>
+## 配置
+##### [回到目录](#索引)
 ### c/config
 ```
 npm config set <key> <value> [-g|--global] # 添加或更新  
@@ -442,7 +447,8 @@ npm get <key> # 同npm config get
 npm set <key> <value> [-g|--global] #同npm config set  
 ```
 
-## <span id="check">查看</span>
+## 查看
+##### [回到目录](#索引)
 ### root
 ```
 npm root # 打印本地node_modules目录  
@@ -572,7 +578,8 @@ npm help-search <text>
 ```
 从npm官方markdown文档中搜索词条
 
-## <span id="other">其他</span>
+## 其他
+##### [回到目录](#索引)
 ### completion
 ```
 npm completion >> ~/.bashrc  

@@ -8,7 +8,7 @@
 **基础**
 > 在未拆分的情况下，使用 modules 属性
 
-在 `./main.js` 中定义modules
+在 `./main.js` 中定义modules
 ``` javascript
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -52,7 +52,7 @@ new Vue({
 
 如果一切运行正常，在 `vue-devtools` 中可以看到：
 
-![s](./images/modules-state.png)
+![vue-devtools](./images/modules-state.png)
 
 🦊 可以看到，modules 中的 state 与根节点的 state 唯一的区别就是，modules 中的 state 被封装到一个对象里面，只要我们知道该对象的 key，就能访问到它。
 ``` javascript
@@ -232,13 +232,13 @@ export default {
   |--index.html
 ```
 - `contstants/types.js`
-    - 为了避免变量名冲突，这个 js 文件是用来存储一些 mutations 需要使用到的方法名称。
+    - 为了避免变量名冲突，这个 js 文件是用来存储一些 mutations 需要使用到的方法名称。
 - `actions/aAction.js`
     - 所有的 actions 全部放在这个文件夹里。
     - 我们可以使用 actions 异步请求数据，再使用 mutations 将请求到的数据提交给 state。
 - `mutations/aMutation.js`
     - 所有的 mutations 全部放在这个文件夹里。
-    - mutations 负责提交修改对应的 modules 中 state 的值。
+    - mutations 负责提交修改对应的 modules 中 state 的值。
 - `getters/aGetter.js`
     - 所有的 getters 圈全部放在这个文件夹里。
 - `modules/aModules.js`
@@ -248,7 +248,7 @@ export default {
 - `../main.js`
     - 在 main.js 中引入 store，完成整个模块制作。
 
-### 2.type.js
+### 2.type.js
 > 这个文件负责定义 mutations 的方法名称。\
 为避免命名冲突，需按照以下格式命名：
 >> `event_moduleName_state`
@@ -334,7 +334,7 @@ export const topicsGetters = {
 *modules/topic.js*
 > 这里才是模块的主体，上面定义的 mutations actions getters 等文件都将作为变量引入到这里。\
 在这里定义模块的 state 值；\
-如果你不想将 getters 拆分出去，那可以单独在这里写 getter。
+如果你不想将 getters 拆分出去，那可以单独在这里写 getter。以此类推。
 ``` javascript
 // 将定义好的 mutations actions getters 引入
 import { topicMutations } from '../mutations/topics'

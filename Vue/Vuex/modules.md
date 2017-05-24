@@ -4,6 +4,7 @@
 - [Split - 拆分模块](#split)
 - [局部状态](#局部状态)
 - [命名空间](#命名空间)
+- [使用规范](#使用规范)
 
 ## Modules
 ##### [返回索引](#索引)
@@ -510,3 +511,26 @@ const todosModule = {
   }
 }
 ```
+
+## 使用规范
+##### [返回索引](#索引)
+
+- 不要使用 ``TOGGLE`` 的方式来切换状态，这样会为调试带来很大的困扰；
+- 所有公共状态放在一个模块中（common.js）。如：dialog, tip, snack, nav, loading ...
+  - 在该模块的局部 state 中，每一个组件应该有一个属于自己的对象；
+  ``` javascript
+  // modules/common.js
+  const common = {
+      state: {
+          dialog: {
+              isShow: false,
+              // ...
+          },
+          nav: {
+              isShow: false,
+              // ...
+          },
+          // ......
+      }
+  }
+  ```

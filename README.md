@@ -4,6 +4,8 @@
     - [mac](https://github.com/Musiky/Article/blob/master/hotKey/mac.md)
     - [terminal](https://github.com/Musiky/Article/blob/master/hotKey/terminal.md)
     - [npm](https://github.com/Musiky/Article/blob/master/hotKey/npm.md)
+- JavaScript
+    - [实用代码片段](https://github.com/Musiky/Article/blob/master/JavaScript/util.md)
 - Vue
     - 🔧 Vue-config（*vue 的一些基本配置，以及插件配置*）
         - [vue-cli 安装](https://github.com/Musiky/Article/blob/master/Vue/Vue-config/1_vue-cli-setup.md)

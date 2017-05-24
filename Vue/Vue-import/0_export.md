@@ -6,7 +6,7 @@
 
 具体使用： 
 
-### 1
+### 1.0
 ``` javascript
 //demo1.js
 export const str = 'hello world'
@@ -23,6 +23,18 @@ export function f(a){
 import { str, f } from 'demo1' //也可以分开写两次，导入的时候带花括号
 ```
 
+### 1.1 如果 demo1.js 中有多个对象需要引入
+``` javascript
+// demo1.js
+export const a = 'a'
+export const b = 'b'
+export const c = 'c'
+// ......
+
+// demo2.js
+import * as obj from 'demo1'
+console.log(obj.a)
+```
 
 ### 2
 ``` javascript

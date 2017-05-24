@@ -2,6 +2,8 @@
 ## 索引
 - [Modules - 基础使用](#modules)
 - [Split - 拆分模块](#split)
+- [局部状态](#局部状态)
+- [命名空间](#命名空间)
 
 ## Modules
 ##### [返回索引](#索引)
@@ -195,6 +197,8 @@ export default {
 ```
 
 ## split
+##### [返回索引](#索引)
+
 > vuex 的模块拆分没有想象中的那么难，只要掌握 ES6 中 [Modules](http://www.infoq.com/cn/articles/es6-in-depth-modules) 相关的知识，就很容易理解。
 
 ### 1.项目结构
@@ -250,15 +254,14 @@ export default {
 
 ### 2.type.js
 > 这个文件负责定义 mutations 的方法名称。\
-为避免命名冲突，需按照以下格式命名：
->> `event_moduleName_state`
+为避免命名冲突，需按照以下格式命名：\
+> `event_moduleName_state`
+
+*constants/types.js*
 ``` javascript
-// topics
 export const FETCH_TOPICS_REQ = 'FETCH_TOPICS_REQ'
 export const FETCH_TOPICS_SUC = 'FETCH_TOPICS_SUC'
 export const FETCH_TOPICS_ERR = 'FETCH_TOPICS_ERR'
-
-// comment
 // ...
 ```
 
@@ -271,7 +274,7 @@ export const FETCH_TOPICS_ERR = 'FETCH_TOPICS_ERR'
 *actions/topics.js*
 ``` javascript
 // 引入 type.js 中定义的方法名称
-import { FETCH_TOPICS_REQ, FETCH_TOPICS_SUC, FETCH_TOPICS_ERR } from '../constants/types'
+import * as types from '../constants/types'
 import axios from 'axios'
 
 // 所有的 actions 都写在 topicsActions 对象中
@@ -279,16 +282,16 @@ import axios from 'axios'
 export const topicsActions = {
     // 请求 topics 的方法
     fetchTopicsActions({ commit, state }, param) {
-        commit(FETCH_TOPICS_REQ);
+        commit(types.FETCH_TOPICS_REQ);
         axios({
             method: 'get',
             url: 'topics'
         }).then((res) => {
-            commit(FETCH_TOPICS_SUC, {
+            commit(types.FETCH_TOPICS_SUC, {
                 data: res.data.data
             })
         }).catch((err) => {
-            commit(FETCH_TOPICS_ERR, {
+            commit(types.FETCH_TOPICS_ERR, {
                 error: err
             });
             console.log(err)
@@ -300,19 +303,19 @@ export const topicsActions = {
 *mutations/topic.js*
 ``` javascript
 // 引入 type.js 中定义的方法名称
-import { FETCH_TOPICS_REQ, FETCH_TOPICS_SUC, FETCH_TOPICS_ERR } from '../constants/types'
+import * as types from '../constants/types'
 
 // 所有的 mutations 都写在 topicsMutations 对象中
 // 格式：moduleNameMutations
 export const topicMutations = {
-    FETCH_TOPICS_REQ(state) {
+    [types.FETCH_TOPICS_REQ](state) {
         state.isFetching = true
     },
-    FETCH_TOPICS_SUC(state, action) {
+    [types.FETCH_TOPICS_SUC](state, action) {
         state.isFetching = false;
         state.data = action.data
     },
-    FETCH_TOPICS_ERR(state, action) {
+    [types.FETCH_TOPICS_ERR](state, action) {
         state.isFetching = false;
         state.error = action.error
     }
@@ -322,9 +325,11 @@ export const topicMutations = {
 *getters/topic.js*
 ``` javascript
 // 所有的 getters 都写在 topicsGetters 对象中
+// 同样，getters 也需要保证命名唯一
 // 格式：moduleNameGetters
+import * a types from '../constants/types'
 export const topicsGetters = {
-    getDataLen (state) {
+    [types.getDataLen] (state) {
         return state.data.length
     }
 }
@@ -400,4 +405,108 @@ new Vue({
     store,
     // ...
 })
+```
+
+## 局部状态
+##### [返回索引](#索引)
+
+对于模块内部的 mutation 和 getter，接收的第一个参数是**模块的局部状态**。
+``` javascript
+const moduleA = {
+  state: { count: 0 },
+  mutations: {
+    increment (state) {
+      // state 模块的局部状态
+      state.count++
+    }
+  },
+
+  getters: {
+    doubleCount (state) {
+      return state.count * 2
+    }
+  }
+}
+```
+
+同样，对于模块内部的 action，**context.state** 是局部状态，根节点的状态是 **context.rootState**:
+``` javascript
+const moduleA = {
+  // ...
+  actions: {
+    action ({ state, rootState, getters, commit, dispatch }) {
+      // state 是该模块的局部状态
+      console.log(state)
+
+      // rootState 是该模块的根级状态
+      console.log(rootState)
+
+      // getters 是该模块局部的getters
+      console.log(getters)
+
+      // commit 使用该方法提交一个 mutations
+      // 该 mutations 可以是任何一个模块中的 mutations
+      commit('mutation')
+
+      // dispatch 使用该方法分发一个 actions
+      // 该 actions 可以是任何一个模块中的 actions
+      dispatch('action', {
+          msg: 'test'
+      })      
+    }
+  }
+}
+```
+
+对于模块内部的 getter，根节点状态会作为第三个参数：
+``` javascript
+const moduleA = {
+  // ...
+  getters: {
+    sumWithRootCount (state, getters, rootState) {
+      return state.count + rootState.count
+    }
+  }
+}
+```
+
+## 命名空间
+##### [返回索引](#索引)
+
+> 模块内部的 action、mutation、和 getter 现在仍然注册在全局命名空间——这样保证了多个模块能够响应同一 mutation 或 action。\
+你可以通过添加前缀或后缀的方式隔离各模块，以避免名称冲突。你也可能希望写出一个可复用的模块，其使用环境不可控。例如，我们想创建一个 todos 模块：
+
+``` javascript
+// types.js
+
+// 定义 getter、action、和 mutation 的名称为常量，以模块名 `todos` 为前缀
+export const DONE_COUNT = 'todos/DONE_COUNT'
+export const FETCH_ALL = 'todos/FETCH_ALL'
+export const TOGGLE_DONE = 'todos/TOGGLE_DONE'
+
+// modules/todos.js
+import * as types from '../types'
+
+// 使用添加了前缀的名称定义 getter、action 和 mutation
+const todosModule = {
+  state: { todos: [] },
+
+  getters: {
+    [types.DONE_COUNT] (state) {
+      // ...
+    }
+  },
+
+  actions: {
+    [types.FETCH_ALL] (context, payload) {
+      // ...
+    }
+  },
+
+  mutations: {
+    [types.TOGGLE_DONE] (state, payload) {
+      // ...
+    }
+  }
+}
 ```

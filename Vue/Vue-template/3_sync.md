@@ -72,7 +72,7 @@ export default {
 <comp :foo="bar" @update:foo="val => bar = val"></comp>
 ```
 
-当子组件需要更新 foo 的值时，我们需要显示地触发一个更新事件:
+当子组件需要更新 foo 的值时，我们需要显示地触发一个更新事件:
 ``` html
 this.$emit('update:foo', newValue)
 ```

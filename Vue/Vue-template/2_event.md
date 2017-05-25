@@ -74,7 +74,7 @@ export default {
 
 3.emit 事件命名
 
-emit 出的事件名称一定要语义明确，并使用抽象的事件类型作为名称，如：
+emit 出的事件名称一定要语义明确，并使用抽象的事件类型作为名称，如：
 - click
 - hover
 - hoverExit

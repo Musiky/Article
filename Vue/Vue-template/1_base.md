@@ -1,4 +1,4 @@
-# 基础
+# 基础
 
 ![img](https://cn.vuejs.org/images/props-events.png)
 

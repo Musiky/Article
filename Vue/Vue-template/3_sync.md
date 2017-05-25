@@ -67,7 +67,7 @@ export default {
 <comp :foo.sync="bar"></comp>
 ```
 
-它是以下代码的语法糖:
+它是以下代码的语法糖:
 ``` html
 <comp :foo="bar" @update:foo="val => bar = val"></comp>
 ```

@@ -41,7 +41,7 @@ export default {
 </script>
 ```
 
-## 具名 slot
+## 具名 slot
 
 ``<slot>`` 元素可以用一个特殊的属性 ``name`` 来配置如何分发内容。
 

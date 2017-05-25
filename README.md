@@ -20,7 +20,7 @@
         - [基础](https://github.com/Musiky/Article/blob/master/Vue/Vue-template/1_base.md)
         - [绑定自定义事件($on / $emit)](https://github.com/Musiky/Article/blob/master/Vue/Vue-template/2_event.md)
         - [.sync 回归 v2.3.0^](https://github.com/Musiky/Article/blob/master/Vue/Vue-template/3_sync.md)
-        - [slot 分发内容][https://github.com/Musiky/Article/blob/master/Vue/Vue-template/4_slot.md]
+        - [slot 分发内容](https://github.com/Musiky/Article/blob/master/Vue/Vue-template/4_slot.md)
     - Vue-Transition
         - [使用自定义动画](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/1_customize.md)
         - [使用 animate.css](https://github.com/Musiky/Article/blob/master/Vue/Vue-transition/2_animate.css.md)

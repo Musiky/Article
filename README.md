@@ -4,6 +4,7 @@
 - [mac](https://github.com/Musiky/Article/blob/master/hotKey/mac.md)
 - [terminal](https://github.com/Musiky/Article/blob/master/hotKey/terminal.md)
 - [npm](https://github.com/Musiky/Article/blob/master/hotKey/npm.md)
+- [vscode](https://github.com/Musiky/Article/blob/master/hotKey/vscode.md)
 
 ---
 

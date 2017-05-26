@@ -50,9 +50,7 @@
 **Vue-Advanced (*vue 进阶语法*)**
 
 - [自定义指令](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/customize.md)
-
 - [混合](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/mixins.md)
-
 - [插件](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/plugin.md)
 
 

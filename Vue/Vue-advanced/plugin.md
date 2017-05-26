@@ -44,7 +44,7 @@ export default {
      * Vue 为插件开发提供一个公开的 install 方法，
      * 通过全局方法 Vue.use() 就可以使用插件。
      * @param {Vue}     [Object] Vue实例构造器
-     * @param {options} [Object] 可选的选项对象
+     * @param {options} [Object] 可选的选项对象，由 Vue.use(pluginName, options) 传入
      */
     install (Vue, options) {
         // 1⃣️ 添加全局资源
@@ -87,8 +87,13 @@ export default {
 ``` javascript
 import Vue from 'vue'
 import plugin from './plugin/index'
-// 传入选项参数
-// Vue.use 会自动阻止注册相同插件多次，届时只会注册一次该插件
+/**
+ * 使用该插件
+ * Vue.use (pluginName, options)
+ * @param {pluginName} [Object] 插件的名称
+ * @param {options}    [Object, Array, String, ...] 
+ *                     向 install(Vue, options) 的 options 传递参数
+ */
 Vue.use(plugin, { someOption: true })
 ```
 
@@ -114,3 +119,7 @@ export default {
 }
 </script>
 ```
+
+<br/>
+
+> ``Vue.use`` 会自动阻止注册相同插件多次，届时只会注册一次该插件。

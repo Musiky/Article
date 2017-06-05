@@ -1,4 +1,8 @@
 # 目录
+
+## Blog
+- [手把手教你写 Vue UI 组件库@vue2.0^](https://github.com/Musiky/Article/blob/master/blog/vue-plugin.md)
+
 ## 快捷键 
 - [git](https://github.com/Musiky/Article/blob/master/hotKey/git.md)
 - [mac](https://github.com/Musiky/Article/blob/master/hotKey/mac.md)
@@ -53,5 +57,13 @@
 - [自定义指令](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/customize.md)
 - [混合](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/mixins.md)
 - [插件](https://github.com/Musiky/Article/blob/master/Vue/Vue-advanced/plugin.md)
+
+---
+
+## 其他
+
+- [前端开发规范](https://juejin.im/post/592d4a5b0ce463006b43b6da?utm_source=gold_browser_extension)
+
+
 
 

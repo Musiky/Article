@@ -85,3 +85,11 @@ emit 出的事件名称一定要语义明确，并使用抽象的事件类型作
 <mu-flat-button label="click me" 
                 @hover="someEvent"></mu-flat-button>
 ```
+
+4.native 事件
+
+如果将发散出去的事件，加上 ``.native`` 修饰符，事件会执行当前作用域的事件，而不是发散出来的事件。
+
+``` html
+<mu-flat-button @click.native="someEvent" />
+```

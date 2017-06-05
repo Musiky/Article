@@ -12,11 +12,11 @@
 | src
 | ---| plugin
 | ---| ---| flexbox                # 组件文件夹
-| ---| ---| ---| flexbox.vue       # flex 布局的父组件
+| ---| ---| ---| flexbox.vue       # flex 布局的父组件
 | ---| ---| ---| flexboxItem.vue   # flex 布局的子组件
 | ---| ---| ---| flexbox.scss      # 样式文件，我使用的是 sass
 | ---| ---| ---| index.js          # 组件的出口
-| ---| ---| styles                 # 公用的 css 样式文件
+| ---| ---| styles                 # 公用的 css 样式文件
 | ---| ---| index.js               # 插件的出口
 | ---| App.vue
 | ---| main.js
@@ -27,7 +27,7 @@
 ## <一> 让项目装载插件
 首先，我们不去理会组件的具体实现，先让我们的项目能够正常装载一个我们`自定义的插件`。
 
-现在，我们的目标，是让项目能够正常显示这两个组件，能显示文本 `flexbox demo` 就可以啦！
+现在，我们的目标，是让项目能够正常显示这两个组件，能显示文本 `flexbox demo` 就可以啦！
 
 *./src/plugin/flexbox/`flexbox.vue`*
 
@@ -40,7 +40,7 @@
 export default {
     // 这是该组件的自定义名称，
     // 之后引用组件时就会用到这个名称。
-    name: 'my-flexbox'
+    name: 'my-flexbox'
 }
 </script>
 ```
@@ -56,7 +56,7 @@ export default {
 
 <script>
 export default {
-    name: 'my-flexbox-item'
+    name: 'my-flexbox-item'
 }
 </script>
 ```
@@ -83,17 +83,6 @@ export { default as flexboxItem } from './flexboxItem.vue'
 
 现在，我们来到插件的出口文件。
 
-1. 引入组件
-
-2. 定义 `components` 变量 
-
-3. **这里是重点**，vue 为编写插件提供了一个 `install(Vue, Option)` 方法，该方法为 vue 添加全局功能；<br>
-该方法有两个参数，第一个是 `Vue`构造器，第二个是可选的参数；
-
-4. 使用 vue 的全局方法 `Vue.component(Name, Object)` 定义组件，第一个参数是组件名，第二参数是组件对象；
-
-5. 最后将组件默认导出。
-
 ``` javascript
 // ----- 1
 import * as flexbox from './flexbox'
@@ -116,6 +105,17 @@ export default {
     install
 }
 ```
+
+1. 引入组件
+
+2. 定义 `components` 变量 
+
+3. **这里是重点**，vue 为编写插件提供了一个 `install(Vue, Option)` 方法，该方法为 vue 添加全局功能；<br>
+该方法有两个参数，第一个是 `Vue`构造器，第二个是可选的参数；
+
+4. 使用 vue 的全局方法 `Vue.component(Name, Object)` 定义组件，第一个参数是组件名，第二参数是组件对象；
+
+5. 最后将组件默认导出。
 
 <br>
 
@@ -148,7 +148,7 @@ Vue.use(plugin)
 ## <二> `Flexbox` 组件的实现
 
 组件的具体实现，就和平时自己写组件的方法是一样的了。
-
+
 这里先贴出代码，我会将具体原理写在代码注释里面。
 
 *./src/plugin/flexbox/`flexbox.vue`*
@@ -173,7 +173,7 @@ export default {
             type: Number,
             default: 8
         },
-        // 子组件的排列方式，水平，或垂直排列。
+        // 子组件的排列方式，水平，或垂直排列。
         orient: {
             type: String,
             default: 'horizontal'
@@ -341,7 +341,7 @@ export default {
 
 ## <三> `FlexboxItem` 组件的实现
 
-`flexbox-item` 组件和 `flexbox` 组件实现原理大同小异，直接贴代码了！
+`flexbox-item` 组件和 `flexbox` 组件实现原理大同小异，直接贴代码了！
 
 *./src/plugin/flexbox/`flexbox.vue`*
 
@@ -437,7 +437,9 @@ export default {
 
 4. 一个库，提供自己的 API，同时提供上面提到的一个或多个功能，如 `vue-router`。
 
-本文的案例，只讲解了最简单的如何配置插件，意在帮助大家尽快上手，觉得有帮助，就打赏打赏吧。
+本文的案例，只讲解了最简单的如何配置插件，意在帮助大家尽快上手。
+
+*觉得有帮助，就打赏打赏吧。*
 
 ![img](./img/IMG_2759.jpg)
 

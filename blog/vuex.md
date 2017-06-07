@@ -84,8 +84,8 @@ Vuex 是一个专为 Vue.js 应用程序开发的 **状态管理模式**。它�
 
 ``` javascript
 export const FETCH_TOPICS_SUC = 'FETCH_TOPICS_SUC'     // ----- 1
-export const FETCH_TOPICS_REQ = 'FETCH_TOPICS_REQ'     // 请求中
-export const FETCH_TOPICS_ERR = 'FETCH_TOPICS_ERR'     // 请求失败
+export const FETCH_TOPICS_REQ = 'FETCH_TOPICS_REQ'     // ----- 2
+export const FETCH_TOPICS_ERR = 'FETCH_TOPICS_ERR'     // ----- 3
 ```
 
 代码解释：

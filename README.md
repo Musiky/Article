@@ -2,6 +2,7 @@
 
 ## Blog
 - [手把手教你写 Vue UI 组件库@vue2.0^](https://github.com/Musiky/Article/blob/master/blog/vue-plugin.md)
+- [手把手教你怎么拆分 vuex@2.x](https://github.com/Musiky/Article/blob/master/blog/vuex.md)
 
 ## 快捷键 
 - [git](https://github.com/Musiky/Article/blob/master/hotKey/git.md)

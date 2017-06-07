@@ -12,7 +12,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的 **状态管理模式**。它�
 
 简单粗暴的理解，你可以将一个组件的状态（如：显示，隐藏）挂载到一个全局变量上，然后通过某个方法，可以随时随地改变它的状态。
 
-如果不使用 `vuex` 做状态管理，那么你就必须使用 `$emit` 将子组件内部发生的事情，告知父组件，来管理该组件的状态。这种方式在大型应用，或嵌套很深的应用中，会相当麻烦，所以我身先士卒，毫无底线的拥抱了 `vuex`～
+如果不使用 `vuex` 做状态管理，那么你就必须使用 `$emit` 将子组件内部发生的事情，告知父组件，来管理该组件的状态。这种方式在大型应用，或嵌套很深的应用中，会相当麻烦，所以我身先士卒，毫无底线的拥抱了 `vuex`～
 
 [这是我最近使用 vuex 重构的一个社区论坛](https://github.com/Musiky/vue-community)
 
@@ -22,14 +22,14 @@ Vuex 是一个专为 Vue.js 应用程序开发的 **状态管理模式**。它�
 
 我们今天要利用 `vuex` 完成一个简单的 请求数据 demo。
 
-- 通过 `action` 完成数据请求，
+- 通过 `action` 完成数据请求，
 - 通过 `mutations` 提交请求数据，并改变 `loading` 状态。
 
 <br>
 
 **废话不多说，我们先拆了这货**
 
-> 如果您对 ES6 的 Module 相关知识不太了解的话，建议阅读[相关文档](http://es6.ruanyifeng.com/#docs/module)
+> 如果您对 ES6 的 Module 相关知识不太了解的话，建议阅读[相关文档](http://es6.ruanyifeng.com/#docs/module)
 
 **项目结构**
 
@@ -68,13 +68,13 @@ Vuex 是一个专为 Vue.js 应用程序开发的 **状态管理模式**。它�
 
 <br>
 
-## <一> 定义 `types.js`
+## <一> 定义 `types.js`
 
-在开始之前，我们需要梳理这个小项目需要用到哪些方法：
+在开始之前，我们需要梳理这个小项目需要用到哪些方法：
 
 1. 发送一个请求，并将获取到的数据提交给对应的 `state`;
 
-2. 发送请求时，显示 正在加载中，请求结束，关闭 正在加载中。
+2. 发送请求时，显示 正在加载中，请求结束，关闭 正在加载中。
 
 <br>
 
@@ -124,14 +124,14 @@ export const topics_mutations = {
 ```
 
 代码解释：
-1. `*` 代表将 `types.js` 中所有暴露的接口引入，并将它们命名为 `types`，之后就可以通过 `types.XXX` 去访问这些接口；<br>
+1. `*` 代表将 `types.js` 中所有暴露的接口引入，并将它们命名为 `types`，之后就可以通过 `types.XXX` 去访问这些接口；<br>
 当然，你也可以通过大括号的方式引入它们：`import { XXX, XXX } from '../constants/types'`；
 
-2. 定义一个 `commit` 函数方法，<br>
+2. 定义一个 `commit` 函数方法，<br>
 第一个参数 `state` 是该模块局部的 `state` 实例，<br>
-第二个参数 `action` 是调用该 `mutation` 时传递过来的参数。
+第二个参数 `action` 是调用该 `mutation` 时传递过来的参数。
 
-3. '正在加载中' 显示的状态。请求成功，为 `false`；请求中，为 `true`；请求失败，为 `false`；
+3. '正在加载中' 显示的状态。请求成功，为 `false`；请求中，为 `true`；请求失败，为 `false`；
 
 4. 向该模块的局部 `state` 提交数据，这个数据来自 `actions`，稍后我们会讲解。
 
@@ -187,7 +187,7 @@ export const topics_action = {
 `commit, dispatch, getters, rootGetters, rootState, state` 6个对象和方法；<br>
 commit 用做提交一个 `mutations`；<br>
 dispatch 用作执行另一个 `actions` 方法；<br>
-getters, rootGetters, rootState, state 只是普通的对象。
+getters, rootGetters, rootState, state 只是普通的对象。
 
 2. 任务到请求体之前，执行 `FETCH_TOPICS_REQ` 方法，将 '正在加载' 状态显示出来；
 
@@ -229,7 +229,7 @@ export default topics
 代码解释：
 1. 引入定义好的 `mutations`，`actions` 方法；
 
-2. 定义模块的局部 `state` 对象的属性值，并为它的 `actions`，`mutations` 赋值。
+2. 定义模块的局部 `state` 对象的属性值，并为它的 `actions`，`mutations` 赋值。
 
 <br>
 
@@ -284,7 +284,7 @@ export default store
 
 ### 大功告成！
 
-## <六> 使用它！
+## <六> 使用它！
 
 首先，我们需要在 `main.js` 中引入，具体代码如下：
 

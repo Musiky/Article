@@ -1,6 +1,7 @@
 # 目录
 
 ## Blog
+- [canvas基础系列（一）实现刮刮卡（橡皮擦）功能](https://github.com/Musiky/Article/blob/master/blog/canvas_1_eraser.md)
 - [手把手教你写 Vue UI 组件库@vue2.0^](https://github.com/Musiky/Article/blob/master/blog/vue-plugin.md)
 - [手把手教你怎么拆分 vuex@2.x](https://github.com/Musiky/Article/blob/master/blog/vuex.md)
 

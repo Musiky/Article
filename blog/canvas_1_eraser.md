@@ -1,11 +1,12 @@
-# canvas 基础系列（一）之实现抽奖刮刮卡（橡皮擦）
 > 笔主最近一个多月以来 “深入“ 研究了 canvas 的实现原理，一口气读完了 《HTML5 Canvas 核心技术》这本书；而这一切以及这篇文章的诞生，都源于笔主公司的一位实习产品经理~  
 > 这位实习生拥有刚毕业时的血气方刚，以及天马行空的想象力；他从未考虑过项目的实际需求，以及上线时间成本，在我们公司以注重产品功能为导向的氛围中，自成一派，成为一股清流 😂  
 > 一个推广的小页面，需要有山有水，有天空有流星，手指放上去还得泛起涟漪，拿到需求文档时吓得我赶紧上 GG 搜 demo，这时我发现单个 demo 都能很好的运行在页面中，可是当他们合并以后，在浏览器调试面板中一行行鲜红的文字不停的拍打着我的脸颊。我突然发现自己在遇到一些奇葩需求时，是多么的无助。因为我不会 canvas 啊！  
 > 本系列文章旨在与大家分享笔主这段时间学习 canvas 的经验，由浅入深，将自己实际工作过程中抄过的 demo （什么？做个抽奖？评估时间？你等等，我搜下 demo…… 哦，不用评估时间了，已经改好了）都一一实现一遍，让妈妈再也不用担心我们遇到奇葩需求啦！  
 
-先上预览 [demo](https://musiky.github.io/canvas/eraser/)
-![eraser code](https://user-gold-cdn.xitu.io/2017/8/7/a97300dea405c5328cb57a1fc4d96505)
+[原文地址](https://github.com/Musiky/Article/blob/master/blog/canvas_1_eraser.md) 喜欢就给我个大大的 ✨ 吧！
+
+先上预览 [demo](https://musiky.github.io/canvas-luckyDraw/scratchCard.html)
+![scratchCard](https://user-gold-cdn.xitu.io/2017/8/14/063858b723f3dfb6b3d66d120ee663c8)
 
 > 我们假设我们的读者都非常熟悉 javascript 原生语法。  
 
@@ -319,3 +320,5 @@ drawRect(110, 0, 100, 100);
 * 刮刮卡的功能，也完全是由橡皮擦功能实现的，我们可以把 canvas 的背景图片设置为开奖的内容，文字等，用一个数组将这些图片的路径包含进去，每次加载页面时，随机调用一个数组元素；
 
 * 这期内容就讲到这里，下期带大家用 canvas 实现 大转盘抽奖，九宫格抽奖。3Q，阿里呀多。
+
+[原文地址](https://github.com/Musiky/Article/blob/master/blog/canvas_1_eraser.md) 喜欢就给我个大大的 ✨ 吧！
